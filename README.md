@@ -13,7 +13,7 @@
 
 - 📫 How to reach me **stephenshifoko@gmail.com**
 
-- 📄 Know about my experiences [https://stephensienko.io.ke/resume](https://stephensienko.io.ke/resume)
+- 📄 Know about my experiences [https://stephensienko.io.ke/resume.pdf](https://stephensienko.io.ke/resume.pdf)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -31,5 +31,4 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=donstesh&show_icons=true&locale=en" alt="donstesh" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=donstesh&" alt="donstesh" /></p>
-
 
