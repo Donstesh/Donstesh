@@ -14,7 +14,7 @@
 
 - 📫 How to reach me **stephenshifoko@gmail.com**
 
-- 📄 Know about my experiences [https://stephensienko.io.ke/resume](https://stephensienko.io.ke/resume)
+- 📄 Know about my experiences [https://stephensienko.io.ke/resume.pdf](https://stephensienko.io.ke/resume)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
