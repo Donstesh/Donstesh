@@ -1,8 +1,6 @@
 <h1 align="center">Hi 👋, I'm STEPHEN SIENKO</h1>
 <h3 align="center">A passionate Full-Stack developer from Eldoret, Kenya.</h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=donstesh" alt="donstesh" /></a> </p>
-
 <p align="left"> <a href="https://twitter.com/sienko_254" target="blank"><img src="https://img.shields.io/twitter/follow/sienko_254?logo=twitter&style=for-the-badge" alt="sienko_254" /></a> </p>
 
 - 🔭 I’m currently working on **https://github.com/Donstesh/My-Port**
@@ -29,6 +27,3 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=donstesh&show_icons=true&locale=en&layout=compact" alt="donstesh" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=donstesh&show_icons=true&locale=en" alt="donstesh" /></p>
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=donstesh&" alt="donstesh" /></p>
-
