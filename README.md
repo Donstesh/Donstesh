@@ -1,17 +1,13 @@
 <h1 align="center">Hi 👋, I'm STEPHEN SIENKO</h1>
-<h3 align="center">A passionate Full-Stack developer from Eldoret, Kenya.</h3>
+<h3 align="center">A passionate Full-Stack developer from Kenya.</h3>
 
 <p align="left"> <a href="https://twitter.com/sienko_254" target="blank"><img src="https://img.shields.io/twitter/follow/sienko_254?logo=twitter&style=for-the-badge" alt="sienko_254" /></a> </p>
 
 - 🔭 I’m currently working on **https://github.com/Donstesh/My-Port**
 
-- 🌱 I’m currently learning **Tailwind, Vuetify**
-
 - 👨‍💻 All of my projects are available at [https://stephensienko.io.ke](https://stephensienko.io.ke)
 
 - 📫 How to reach me **stephenshifoko@gmail.com**
-
-- 📄 Know about my experiences [https://stephensienko.io.ke/resume.pdf](https://stephensienko.io.ke/resume.pdf)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
