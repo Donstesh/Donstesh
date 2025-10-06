@@ -2,33 +2,28 @@ name: Update README
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight
-  workflow_dispatch:      # Allows manual triggering
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC (3 PM Kenya Time)
+  workflow_dispatch:       # Allows manual triggering
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          
-      - name: Update README with current data
+        
+      - name: Update timestamp in README
         run: |
-          # Get current date and time
-          CURRENT_DATE=$(date +"%Y-%m-%d %H:%M:%S")
+          # Get current date and time in Nairobi timezone
+          CURRENT_DATE=$(TZ='Africa/Nairobi' date +"%Y-%m-%d at %H:%M:%S %Z")
           
-          # Create updated README content
-          cat > README.md << 'EOF'
+          # Create a temporary README file
+          cat > README_TEMP.md << 'EOF'
 <h1 align="center">Hi 👋, I'm STEPHEN SIENKO</h1>
 <h3 align="center">A passionate Full-Stack developer from Kenya</h3>
 
@@ -44,8 +39,6 @@ jobs:
 
 ## 🚀 Real-time Stats
 
-**Last Updated:** $CURRENT_DATE
-
 <p align="center">
   <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=donstesh&theme=dark" alt="donstesh" />
 </p>
@@ -54,15 +47,15 @@ jobs:
 
 <p align="center">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=donstesh&show_icons=true&locale=en&theme=radical&include_all_commits=true&count_private=true" alt="donstesh" height="165" />
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=donstesh&layout=compact&theme=radical&langs_count=8&hide=html,css" alt="donstesh" height="165" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=donstesh&layout=compact&theme=radical&langs_count=8" alt="donstesh" height="165" />
 </p>
 
 ## 🔥 Current Focus
 
-- 🔭 **Working on:** [https://spy-damusic.com/](https://spy-damusic.com/)
+- 🔭 **Working on:** [Spy Da Music](https://spy-damusic.com/)
 - 🌱 **Learning:** Advanced cloud architectures & real-time systems
 - 💼 **Open to:** Collaborations on innovative projects
-- 🎯 **Goal:** Building scalable full-stack applications
+- 👨‍💻 **Portfolio:** [stephensienko.io.ke](https://stephensienko.io.ke)
 
 ## 🛠️ Tech Stack
 
@@ -73,6 +66,13 @@ jobs:
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+
+### Mobile & Databases
+![Android](https://img.shields.io/badge/-Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
 ### Cloud & DevOps
 ![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
@@ -81,7 +81,7 @@ jobs:
 
 ## 📈 Activity Graph
 
-[![Donstesh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=donstesh&theme=react-dark)](https://github.com/donstesh)
+[![Stephen's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=donstesh&theme=react-dark)](https://github.com/donstesh)
 
 ## 📫 Connect With Me
 
@@ -100,14 +100,20 @@ jobs:
 ---
 
 <p align="center">
-  <i>Last automated update: $CURRENT_DATE</i>
+  <i>🔄 Last updated: $CURRENT_DATE</i>
 </p>
 EOF
-
+          
+          # Replace the placeholder with actual date
+          sed -i "s/\\$CURRENT_DATE/$CURRENT_DATE/g" README_TEMP.md
+          
+          # Replace the original README
+          mv README_TEMP.md README.md
+        
       - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --staged --quiet || git commit -m "🔄 Auto-update README - $(date +'%Y-%m-%d %H:%M:%S')"
+          git commit -m "🔄 Auto-update README - $(TZ='Africa/Nairobi' date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git push
