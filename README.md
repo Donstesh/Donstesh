@@ -117,7 +117,3 @@
 <p align="center">
   <i>⚡ Code never lies, comments sometimes do.</i>
 </p>
-
-<p align="center">
-  <img src="https://github.com/donstesh/donstesh/raw/output/github-contribution-grid-snake.svg" alt="snake gif" />
-</p>
